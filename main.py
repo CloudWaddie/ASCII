@@ -1,4 +1,4 @@
-def generate_letter_ascii_art(letter):
+def generate_letter_ascii_art(word):
     letter_patterns = {
         'A': "    _    \n   / \\   \n  / _ \\  \n / ___ \\ \n/_/   \\_\\",
         'B': "____  \n| __) \n|  _ \\ \n| |_) |\n|____/ ",
@@ -16,14 +16,25 @@ def generate_letter_ascii_art(letter):
         'N': " _   _ \n| \\ | |\n|  \\| |\n| |\\  |\n|_| \\_|",
         'O': "  ___  \n / _ \\ \n| | | |\n| |_| |\n \\___/ ",
         'P': " ____  \n|  _ \\ \n| |_) |\n|  __/ \n|_|    ",
-        'Z': "#### \n   # \n  #  \n #   \n#### "
+        'Q': "  ___  \n / _ \\ \n| | | |\n| |_| |\n \\__\\_\\",
+        'R': " ____  \n|  _ \\ \n| |_) |\n|  _ < \n|_| \\_\\",
+        'S': " ____  \n/ ___| \n\\___ \\ \n ___) |\n|____/ ",
+        'T': " _____ \n|_   _|\n  | |  \n  | |  \n  |_|  ",
+        'U': " _   _ \n| | | |\n| | | |\n| |_| |\n \\___/ ",
+        'V': "__     __\n\\ \\   / /\n \\ \\ / / \n  \\ V /  \n   \\_/   ",
+        'W':
+        "__        __\n\\ \\      / /\n \\ \\ /\\ / / \n  \\ V  V /  \n   \\_/\\_/   ",
+        'X': "__  __\n\\ \\/ /\n \\  / \n /  \\ \n/_/\\_\\",
+        'Y': "__   __\n\\ \\ / /\n \\ V / \n  | |  \n  |_|  ",
+        'Z': " _____\n|__  /\n  / / \n / /_ \n/____|"
     }
 
-    letter = letter.upper()
-    if letter not in letter_patterns:
-        return "Invalid letter."
+    word = word.upper()
+    for letter in word:
+        if letter not in letter_patterns:
+            return "Invalid letter."
+        return letter_patterns[word]
 
-    return letter_patterns[letter]
 
-letter = "P"
-print(generate_letter_ascii_art(letter))
+word = "ZS"
+print(generate_letter_ascii_art(word))
