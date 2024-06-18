@@ -30,10 +30,13 @@ def generate_letter_ascii_art(word):
     }
 
     word = word.upper()
+
+    output = ""
     for letter in word:
         if letter not in letter_patterns:
             return "Invalid letter."
-        return letter_patterns[word]
+        output = output + "\n" + letter_patterns[letter]
+    return output
 
 
 word = "ZS"
